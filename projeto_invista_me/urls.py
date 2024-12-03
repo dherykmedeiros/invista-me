@@ -23,6 +23,7 @@ urlpatterns = [
     path('', investimentos, name='investimentos'),
     path('novo_investimento/', criar, name='novo_investimento'),
     path('/<int:id_investimento>',detalhe, name='detalhe'),
-    path('novo_investimento/<int:id_investimento>',editar, name='editar')
+    path('novo_investimento/<int:id_investimento>',editar, name='editar'),
+    path('excluir_investimento/<int:id_investimento>', excluir, name='excluir')
     
 ]
