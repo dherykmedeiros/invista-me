@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Listagem de investimnetos</h1>
+    <button><a href="{% url 'novo_investimento' %}">Novo Investimento</a></button>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Investimnetos</th>
+            <th>Valor</th>
+        </tr>
+        {% for dado in dados %}
+        <tr>
+            <td>{{dado.id}}</td>
+            <td>{{dado.investimento}}</td>
+            <td>{{dado.valor}}</td>
+            <td><button><a href="{% url 'detalhe' dado.id %}">Detalhe</a></button></td>
+            <td><button><a href="{% url 'editar' dado.id %}">Editar</a></button></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
