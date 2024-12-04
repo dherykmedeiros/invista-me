@@ -16,5 +16,6 @@
         <td>{{ dados.data }}</td>
         <td>{{ dados.pago }}</td>
     </table>
+    <button class="btn btn-primary"><a style='color : white'  href="{% url 'editar' dados.id %}">Editar</a></button>
 </div>
 {% endblock  %}

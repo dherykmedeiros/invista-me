@@ -7,6 +7,7 @@
         {% csrf_token %}
         {{formulario | crispy}}
         <button type="submit" class="btn btn-success">Salvar</button>
+        <button class="btn btn-danger"><a style="color : white" href="{% url 'investimentos' %}">Cancelar</a></button>
     </form>
 </div>
     {% endblock%}
