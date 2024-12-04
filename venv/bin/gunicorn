@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/dheryk/Área de trabalho/projeto-invista-me/invista-me/venv/bin/python3" "$0" "$@"
+'''exec' "/home/dheryk/Área de trabalho/invista-me/invista-me/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
