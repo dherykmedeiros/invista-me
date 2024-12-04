@@ -12,13 +12,25 @@
           <a class="navbar-brand" href="{% url 'investimentos' %}">Invista-me</a>
 
           <ul style="list-style: none;">
+            {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-item nav-link" href="{% url 'login' %}">Login </a>
+                <strong class= "nav-item nav-link">Bem-vindo {{user.get_username}} </strong>
             </li>
-
             <li class="nav-item">
-                <a class="nav-item nav-link" href="{% url 'novo_usuario' %}"> Cadastro</a>
+                <form method="POST" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <button class="btn bg-light text-primary" type="submit">Sair</button>
+                </form>
             </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="{% url 'login' %}">Entrar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'novo_usuario' %}">Cadastrar</a>
+        </li>
+        {% endif %}
+            
           </ul>
           
         </div>
